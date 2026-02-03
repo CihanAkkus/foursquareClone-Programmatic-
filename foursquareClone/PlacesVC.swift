@@ -8,7 +8,9 @@
 import UIKit
 import FirebaseAuth
 
-class PlacesVC: UIViewController {
+class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +19,24 @@ class PlacesVC: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItem.Style.plain, target: self, action: #selector(logoutButtonTapped))
+        
+        setupUI()
     
         
     }
+    
+    func setupUI( ){
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.frame = view.bounds
+        
+        view.addSubview(tableView)
+        
+    }
+    
+    
     
     @objc func addButtonTapped( ){
         
@@ -52,6 +69,15 @@ class PlacesVC: UIViewController {
         
         
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
     
 
 

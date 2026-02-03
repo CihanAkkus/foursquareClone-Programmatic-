@@ -111,7 +111,7 @@ class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate,UINavigation
         navigationController?.pushViewController(mapVC, animated: true)
         
     }else{
-        let alert = UIAlertController(title: "Error", message: "Empty Input ?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: "Empty Input?", preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okButton)
         present(alert, animated: true)

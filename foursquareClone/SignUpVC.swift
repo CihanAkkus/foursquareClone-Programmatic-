@@ -157,6 +157,7 @@ class SignUpVC: UIViewController {
                 }else{
                     
                     let places = PlacesVC()
+                    let navigationController = UINavigationController(rootViewController: places)
                     
                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                        let delegate = windowScene.delegate as? SceneDelegate,
